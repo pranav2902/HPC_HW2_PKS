@@ -9,16 +9,13 @@ TARGETS = $(basename $(wildcard *.cpp))
 all : $(TARGETS)
 
 MMult1:MMult1.cpp
-    $(CXX) $(CXXFLAGS) $^ && ./a.out
+	$(CXX) $(CXXFLAGS) $^ && ./a.out
 
 val_test01_solved:val_test01_solved.cpp
-    $(CXX) $(VALFLAGS) $^ && valgrind --tool=memcheck  --leak-check=full ./a.out
+	$(CXX) $(VALFLAGS) $^ && valgrind --tool=memcheck  --leak-check=full ./a.out
 
 val_test02_solved:val_test02_solved.cpp
-    $(CXX) $(VALFLAGS) $^ && valgrind --tool=memcheck  --leak-check=full ./a.out
+	$(CXX) $(VALFLAGS) $^ && valgrind --tool=memcheck  --leak-check=full ./a.out
 
 fast-sin:fast-sin.cpp
-    $(CXX) $(CXXFLAGS) $^ && ./a.out
-
-clean:
-    $(RM) $(TARGETS)
+	$(CXX) $(CXXFLAGS) $^ && ./a.out
